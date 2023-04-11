@@ -1,8 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 
-const { TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET } = process.env
-
 const getTweets = require('./getTweets')
 const getTweetById = require('./getTweetById')
 const replyToTweet = require('./replyToTweet')
@@ -35,4 +33,4 @@ app.listen(port, () => {
     console.log(`Example app listening  on  port ${port}`)
 })
 
-console.log("omade inja to twitterbot")
+console.log("log twitterbot")

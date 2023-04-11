@@ -14,7 +14,7 @@ newTweetsQueue.process(async function (job, done) {
         await Promise.map(result.data, async (tweet) => {
             const aiResult = await axios.post('http://ai:3000/analyze', { text: tweet.text })
             if (aiResult.data.isRelatedToEmergency) {
-                const newTweet = await Tweet.create({ text: tweet.text, tweetId: tweet.id })
+                const newTweet = await Tweet.create({ text: tweet.text, id: tweet.id })
                 console.log('newTweet', newTweet)
                 await Promise.map(aiResult.data.tags, async (tag) => {
                     const newTag = await Tag.findOneAndUpdate({ id: tag }, { id: tag }, { upsert: true, new: true})

@@ -9,4 +9,4 @@ mongoose.connect(`mongodb://${mongoURI}/${mongoDatabaseName}`, {
     useUnifiedTopology: true,
 })
 
-module.exports = { mongo: mongoose, ObjectIdSchema, ObjectIdType }
+module.exports = { mongoose, ObjectIdSchema, ObjectIdType }

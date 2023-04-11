@@ -1,4 +1,4 @@
-const mongoose = require('./mongo');
+const { mongoose } = require('./mongo');
 
 const tweetSchema = new mongoose.Schema({
     text: String,

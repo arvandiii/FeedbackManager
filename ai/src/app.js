@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
     res.send({hi: 'there'})
 })
 
-app.post('/analyze ', async (req, res) => {
+app.post('/analyze', async (req, res) => {
     const { text } = req.body
     res.send({ text, isRelatedToEmergency: true, tags: ['water'] })
 })

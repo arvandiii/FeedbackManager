@@ -24,10 +24,10 @@ newTweetsQueue.process(async function (job, done) {
                 })
             }
         })
-        console.log(data, result.data)
+        console.log(result.data)
 
     } catch (error) {
-        console.log(data, 'error newTweetsQueue', error)
+        console.log('error newTweetsQueue', error)
     }
     done()
 });

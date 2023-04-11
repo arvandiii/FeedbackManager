@@ -23,19 +23,19 @@ services:
     depends_on:
       - mongo
       - redis
-  manager:
-    build: ./manager
-    container_name: manager
-    ports:
-      - 4000:4000
-    depends_on:
-      - mongo
-      - redis
   twitterbot:
     build: ./twitterbot
     container_name: twitterbot
     ports:
       - 5000:5000
+    depends_on:
+      - mongo
+      - redis
+  manager:
+    build: ./manager
+    container_name: manager
+    ports:
+      - 4000:4000
     depends_on:
       - mongo
       - redis

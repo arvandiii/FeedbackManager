@@ -1,3 +1,5 @@
+const mongoose = require('mongoose')
+
 const { ObjectId: ObjectIdSchema } = mongoose.Schema
 const { ObjectId: ObjectIdType } = mongoose.Types
 

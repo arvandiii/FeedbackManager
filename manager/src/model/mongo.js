@@ -1,8 +1,8 @@
 const { ObjectId: ObjectIdSchema } = mongoose.Schema
 const { ObjectId: ObjectIdType } = mongoose.Types
 
-const mongoURI = 'localhost:27017'
-const mongoDatabaseName = 'discord'
+const mongoURI = 'mongo:27017'
+const mongoDatabaseName = 'manager'
 
 mongoose.connect(`mongodb://${mongoURI}/${mongoDatabaseName}`, {
     useNewUrlParser: true,

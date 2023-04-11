@@ -1,5 +1,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+const loop = require('./loop')
 
 const app = express()
 
@@ -12,9 +13,10 @@ app.get('/', async (req, res) => {
     res.send({})
 })
 
-
 app.listen(port, () => {
     console.log(`Example app listening  on  port ${port}`)
 })
+
+loop.initLoop()
 
 console.log("log manager")

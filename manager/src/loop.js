@@ -17,7 +17,7 @@ newTweetsQueue.process(async function (job, done) {
                 const newTweet = await Tweet.create({ text: tweet.text, tweetId: tweet.id })
                 console.log('newTweet', newTweet)
                 await Promise.map(aiResult.data.tags, async (tag) => {
-                    const [newTag, created] = await Tag.findOrCreate({ where: { name: tag } })
+                    const newTag = await Tag.findOneAndUpdate({ id: tag }, { id: tag }, { upsert: true, new: true})
                     console.log('newTag', newTag)
                     await TweetTag.create({ tweetId: newTweet.id, tagId: newTag.id })
                     console.log('newTweetTag', newTweetTag)

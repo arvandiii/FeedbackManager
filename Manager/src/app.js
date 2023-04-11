@@ -1,0 +1,1 @@
+console.log("omade inja to manager")
